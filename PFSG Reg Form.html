@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAW's Foundation Scholarship Grant 2025 Registration Form</title>
+    <meta name="keywords" content="CBT Practice, PLAW's Foundation Scholarship Fund,PLAW's Foundation Scholarship Fund 2025, Tech Scholarships for me, How to kickstart my tech career with little or no money.">
+    <link rel="website icon" href="PFSG.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+            width: 60%;
+        }
+        form {
+            gap: 10px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            grid-column: span 2;
+            height: 100px;
+            resize: vertical;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 10px;
+            grid-column: span 2;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+
+        .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .modal-content {
+        background-color: white;
+        margin: 15% auto;
+        padding: 20px;
+        width: 60%;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        transform: scale(0.8);
+        transition: transform 0.4s ease-in-out; 
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .close:hover {
+        color: black;
+    }
+    .message a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .message a:hover {
+        text-decoration: underline;
+    }
+
+    .modal.show {
+        display: block;
+        opacity: 1;
+    }
+    .modal.show .modal-content {
+        transform: scale(1); 
+    }
+
+    .modal.hide {
+        opacity: 0;
+    }
+    .modal.hide .modal-content {
+        transform: scale(0.8);
+    }
+
+    footer{
+    color: #777;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to PLAW's Foundation Scholarship Programme!</h1>
+        <p>We are dedicated to equipping generations to spearhead us into the future!</p>
+    </div>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name here" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email here" required><br><br>
+
+            <label for="date">Date Of Birth:</label>
+            <input type="date" id="date" name="date" required><br><br>
+
+            <label for="Institution">Institution:</label>
+            <select id="Institution" name="Institution" required>
+                <option value="Tech Hub">Tech Hub</option>
+                <option value="Skill Acquisition Programmes">Skill Acquisition Programmes</option>
+                <option value="University">University</option>
+                <option value="Polytechnics">Polytechnics</option>
+            </select><br><br>
+
+            <label for="institutionName">Institution Name:</label>
+            <input type="text" id="institutionName" name="institutionName" placeholder="Enter institution name" required><br><br>
+
+            <label for="reasons">Reasons:</label>
+            <textarea id="reasons" name="reasons" placeholder="Why should we give you this scholarship grant?" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; PLAW's Foundation Scholarship - 2025</p> <!--For Footer-->
+    </footer>
+
+    <!-- Pop-up Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Congratulations on Registration!</h3>
+            <p>
+                You're a step closer to achieving this grant slated for 50,000 people globally.  
+                The questions for this year will be centered around **Web Development**.  
+                An email will be sent to you containing resource files you can learn from  
+                for the exams slated **March 5th**!  
+            </p>
+            <p class="message">
+                Click OK or on this  
+                <a href="index.html">link</a>  
+                to test your knowledge in preparation for the main exam.
+            </p>
+            <a href="index.html"><button>OK</button></a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            let modal = document.getElementById("successModal");
+            modal.classList.add("show");
+        });
+
+        function closeModal() {
+            let modal = document.getElementById("successModal");
+            modal.classList.add("hide");
+
+            setTimeout(() => {
+                modal.classList.remove("show", "hide");
+                modal.style.display = "none";
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>
